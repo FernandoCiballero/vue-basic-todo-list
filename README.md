@@ -4,6 +4,6 @@ This is a pretty basic TO DO app created using [Vue JS Framework](https://vuejs.
 
 # Screenshots
 
-![todo-list](./assets/todo-list.jpg)
-![create-todo](./assets/create-todo.jpg)
-![edit-todo](./assets/edit-todo.jpg)
+![todo-list](./images/todo-list.png)
+![create-todo](./images/create-todo.png)
+![edit-todo](./images/edit-todo.png)
