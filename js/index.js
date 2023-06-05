@@ -2,7 +2,7 @@ const app = Vue.createApp({
   data() {
     return {
       message: 'Todo App',
-      task: null,
+      newTodo: '',
       todosList: [
         { task: 'Have breakfast', edit: false },
         { task: 'Clean my room', edit: false },
@@ -13,24 +13,21 @@ const app = Vue.createApp({
   },
   methods: {
     addTodo(){
-      if(this.task != null){
+      if(this.newTodo){
         let task = {
-          task: this.task
+          task: this.newTodo,
+          edit: false
         }
         this.todosList.push(task)
-        this.task = null
+        this.newTodo = ''
       }
     },
     showEditForm(index){
       this.todosList[index].edit = true
-      this.task = this.todosList[index].task
     },
-
     editTodo(index){
-      this.disableFormInput = true
-      this.todosList[index].task = this.task
       this.todosList[index].edit = false
-      this.task = null
+      this.toEditTodo = ''
     },
     deleteTodo(index){
       this.todosList.splice(index, 1);

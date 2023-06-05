@@ -18,14 +18,20 @@
         </header>
         <section :class="{ section: true, inputSection: true }">
           <form v-on:submit.prevent="addTodo">
-            <input type="text" v-model="task">
+            <input type="text" v-model="newTodo">
             <button type="submit">Add Todo</button>
           </form>
         </section>
         <section :class="{ section: true, listTodoSection: true }">
-          <ul v-for="(todo, index) in todosList">
-            <li v-if="todo.edit"><input type="text" v-model="task"><button @:click.once="editTodo(index)" class="fa fa-check edit-todo"></button></li>
-            <li v-else @:click="showEditForm(index)"><span>{{ todo.task }}</span><button @:click.once="deleteTodo(index)" class="fa fa-trash-o delete-todo"></button></li>
+          <ul>
+            <li v-for="(todo, index) in todosList">
+              <template v-if="todo.edit">
+                <input type="text" v-model="todo.task"><button @:click="editTodo(index)" class="fa fa-check edit-todo"></button>
+              </template>
+              <template v-else>
+                <span @:click="showEditForm(index)">{{ todo.task }}</span><button @:click="deleteTodo(index)" class="fa fa-trash-o delete-todo"></button>
+              </template>
+            </li>
           </ul>
         </section>
       </main>
