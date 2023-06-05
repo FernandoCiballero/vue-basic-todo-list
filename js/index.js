@@ -1,7 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
-      message: 'Basic todo app'
+      message: 'Todo App'
     }
   }
 })

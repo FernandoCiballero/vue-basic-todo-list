@@ -1,11 +1,118 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: cursive;
 }
 
-h1 {
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  background-image: linear-gradient(to right, #41B883 , #6ee4af);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  background-color: aliceblue;
+  /* height: 50vh; */
+  width: 30vw;
+  font-size: 18px;
+  padding: 20px;
+  margin: 10px 10px;
+}
+
+.header {
+  margin: 20px;
+}
+
+.header h1 {
   color: #34495E;
-  text-shadow: 3px 3px 1px #41B883;
   text-align: center;
+}
+
+.section {
+   margin: 20px;
+}
+
+
+.inputSection form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputSection form input[type="text"] {
+  width: 65%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  border: 2px solid lightgray;
+}
+
+.inputSection form button {
+  width: 30%;
+  padding: 10px 10px;
+  margin-left: 10px;
+  color:aliceblue;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  font-size: 18px;
+  background-image: linear-gradient(to right, #41B883 , #6ee4af);
+}
+
+.listTodoSection {
+  display: flex;
+  justify-content: center;
+}
+
+.listTodoSection ul {
+  width: 100%;
+  list-style-type: none;
+}
+
+.listTodoSection ul li {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.listTodoSection ul li span {
+  display: inline-block;
+  width: 83%;
+  padding: 10px 10px;
+  background-color: rgba(211, 211, 211, 0.253);
+  border-color: rgba(211, 211, 211, 0.253);
+  border-radius: 5px;
+}
+
+.listTodoSection ul li .delete-todo {
+  width: 8%;
+  font-size: 18px;
+  padding: 10px;
+  margin-left: 5px;
+  background-color: tomato;
+  color: white;
+  border-color: lightgray;
+  border-radius: 5px;
+}
+
+.listTodoSection ul li input[type="text"] {
+  font-size: 18px;
+  padding: 10px;
+  width: 82.5%;
+  border-color: lightgray;
+  border-radius: 5px;
+}
+
+.listTodoSection ul li .edit-todo {
+  width: 8%;
+  color: white;
+  padding: 10px;
+  border-color: lightgray;
+  border-radius: 5px;
+  margin-left: 4px;
+  background-image: linear-gradient(to right, #41B883 , #6ee4af);
 }
