@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Todo App</title>
 </head>
 <body>
   <div id="app">
@@ -16,27 +17,21 @@
           <h1>{{ message }}</h1>
         </header>
         <section :class="{ section: true, inputSection: true }">
-          <form>
-            <input type="text">
+          <form v-on:submit.prevent="addTodo">
+            <input type="text" v-model="task">
             <button type="submit">Add Todo</button>
           </form>
         </section>
         <section :class="{ section: true, listTodoSection: true }">
-          <ul>
-            <!-- delete button template -->
-            <li><span>Example 1</span><button class="fa fa-trash-o delete-todo"></button></li>
-            <li><span>Example 1</span><button class="fa fa-trash-o delete-todo"></button></li>
-            <li><span>Example 1</span><button class="fa fa-trash-o delete-todo"></button></li>
-            <li><span>Example 1</span><button class="fa fa-trash-o delete-todo"></button></li>
-            <li><span>Example 1</span><button class="fa fa-trash-o delete-todo"></button></li>
-            <!-- edit button template -->
-            <li><input type="text"><button class="fa fa-check edit-todo"></button></li>
+          <ul v-for="(todo, index) in todosList">
+            <li v-if="todo.edit"><input type="text" v-model="task"><button @:click.once="editTodo(index)" class="fa fa-check edit-todo"></button></li>
+            <li v-else @:click="showEditForm(index)"><span>{{ todo.task }}</span><button @:click.once="deleteTodo(index)" class="fa fa-trash-o delete-todo"></button></li>
           </ul>
         </section>
       </main>
     </div>
   </div>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="./js/index.js"></script>
+  <script src="../js/index.js"></script>
 </body>
 </html>

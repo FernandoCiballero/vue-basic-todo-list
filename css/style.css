@@ -69,11 +69,6 @@ body {
   border-style: solid;
 }
 
-.listTodoSection {
-  display: flex;
-  justify-content: space-between;
-}
-
 .listTodoSection ul {
   width: 100%;
   list-style-type: none;
