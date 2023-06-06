@@ -3,6 +3,7 @@ const app = Vue.createApp({
     return {
       message: 'Todo App',
       newTodo: '',
+      originalContentTodo: '',
       editing: false,
       todosList: [
         { task: 'Have breakfast', edit: false },
@@ -26,6 +27,7 @@ const app = Vue.createApp({
     showEditForm(index){
       if(!this.editing){
         this.editing = true
+        this.originalContentTodo = this.todosList[index].task
         this.todosList[index].edit = true
       }
     },
@@ -38,7 +40,9 @@ const app = Vue.createApp({
       }
     },
     cancelEditTodo(index){
+      this.todosList[index].task = this.originalContentTodo
       this.todosList[index].edit = false
+      this.originalContentTodo = ''
       this.editing = false
     },
     deleteTodo(index){

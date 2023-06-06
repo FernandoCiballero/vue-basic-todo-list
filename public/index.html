@@ -27,12 +27,12 @@
             <li v-for="(todo, index) in todosList">
               <template v-if="todo.edit">
                 <input type="text" v-model="todo.task">
-                <button @:click="cancelEditTodo(index)" class="fa fa-ban cancel-edit-todo"></button>
-                <button @:click="editTodo(index)" class="fa fa-check edit-todo"></button>
+                <button @:click="cancelEditTodo(index)" class="btn fa fa-ban cancel-edit-todo"></button>
+                <button @:click="editTodo(index)" class="btn fa fa-check edit-todo"></button>
               </template>
               <template v-else>
                 <span @:click="showEditForm(index)">{{ todo.task }}</span>
-                <button @:click="deleteTodo(index)" class="fa fa-trash-o delete-todo"></button>
+                <button @:click="deleteTodo(index)" class="btn fa fa-trash-o delete-todo"></button>
               </template>
             </li>
           </ul>
