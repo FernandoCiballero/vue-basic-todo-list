@@ -108,7 +108,7 @@ body {
 .listTodoSection ul li input[type="text"] {
   font-size: 18px;
   padding: 10px;
-  width: 86.5%;
+  width: 78%;
   border-color: lightgray;
   border-radius: 5px;
   border-style: solid;
@@ -128,5 +128,16 @@ body {
   border-radius: 5px;
   margin-left: 4px;
   background-image: linear-gradient(to right, #41B883 , #6ee4af);
+  border-style: solid;
+}
+
+.listTodoSection ul li .cancel-edit-todo {
+  width: 8%;
+  color: white;
+  padding: 10px;
+  border-color: tomato;
+  border-radius: 5px;
+  margin-left: 4px;
+  background-image: linear-gradient(to right, tomato , rgba(255, 99, 71, 0.699));
   border-style: solid;
 }

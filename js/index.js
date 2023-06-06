@@ -3,6 +3,7 @@ const app = Vue.createApp({
     return {
       message: 'Todo App',
       newTodo: '',
+      editing: false,
       todosList: [
         { task: 'Have breakfast', edit: false },
         { task: 'Clean my room', edit: false },
@@ -23,11 +24,22 @@ const app = Vue.createApp({
       }
     },
     showEditForm(index){
-      this.todosList[index].edit = true
+      if(!this.editing){
+        this.editing = true
+        this.todosList[index].edit = true
+      }
     },
     editTodo(index){
+      if(this.todosList[index].task.length >= 5){
+        this.todosList[index].edit = false
+        this.editing = false
+      }else{
+        alert('Please enter at least 5 characters')
+      }
+    },
+    cancelEditTodo(index){
       this.todosList[index].edit = false
-      this.toEditTodo = ''
+      this.editing = false
     },
     deleteTodo(index){
       this.todosList.splice(index, 1);

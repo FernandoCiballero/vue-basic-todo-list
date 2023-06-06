@@ -1,6 +1,6 @@
 # Basic Todo App
 
-This is a pretty basic TO DO app created using [Vue JS Framework](https://vuejs.org/)
+This is a pretty basic TO DO app created using [Vue.js](https://vuejs.org/)
 
 # Screenshots
 
